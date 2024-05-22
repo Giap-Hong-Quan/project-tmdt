@@ -6,7 +6,28 @@ box-sizing: border-box;
 html{
     font-size: 62.5%;
 }
+:root{
+    --text-color:#1A162E;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(9%) saturate(4375%) hue-rotate(212deg) brightness(93%) contrast(96%);
+}
 body{
     font-size: 1.6rem;
     font-family: Gordita,sans-serif;
+    color: var(--text-color);
+}
+button, select,textarea,input{
+    color: inherit;
+    font-family: inherit;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.icon{
+    filter: var(--icon-color);
 }

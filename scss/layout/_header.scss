@@ -1,0 +1,113 @@
+@use "../abstracts";
+
+%flexItemCenter{
+    display: flex;
+    align-items: center;
+}
+
+.header{
+    background-color:var(--header-bg-color) ;
+    padding: 3rem 0 ;
+    @include abstracts.breakpoint(sm){
+        padding:1.6rem 0;
+    }
+    @include abstracts.breakpoint(lg){
+        padding:2.0rem 0;
+    }
+    // @include abstracts.breakpoint(lg){
+    //     width: 100px;
+    // }
+    // @include abstracts.breakpoint(sm){
+    //     width: 100px;
+    // }
+}
+.top__bar{
+   @extend %flexItemCenter;
+    &-menu-icon{
+        display: none;
+        @include abstracts.breakpoint(lg){
+            display: block;
+        }
+    }
+    
+}
+// nav
+.navbar{
+    @include abstracts.breakpoint(lg){
+        display: none;
+    }
+    @include abstracts.breakpoint(xl){
+        margin-left: 6rem;
+    }
+    margin-left: 14.4rem;
+    &__list{
+        @extend %flexItemCenter;
+        gap: 3rem;
+    }
+    &__link{
+        @extend %flexItemCenter;
+        gap: 0.6rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.2rem;
+        
+    }
+    &__arrow{
+        margin-top: 0.3rem;
+    }
+}
+
+// top__actions
+.top__act{
+    margin-left: auto;
+    @extend %flexItemCenter;
+    gap: 2rem;
+    &-group{
+        @extend %flexItemCenter;
+        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
+        border-radius: 0.8rem;
+        background-color: var(--top-act-group-color);
+        @include abstracts.breakpoint(sm){
+            display: none;
+        }
+        @include abstracts.breakpoint(md){
+            display: none;
+        }
+    }
+    &-group-single{
+        @include abstracts.breakpoint(lg){
+            display: none;
+        }
+    }
+    &-group-single &-btn{
+         padding: 1.3rem;
+
+    }
+    &-btn{
+        padding: 1.3rem 2rem;
+        border: none;
+        outline: none;
+        display: flex;
+        @extend %flexItemCenter;
+        gap: 1rem;
+        cursor: pointer;
+    }
+    &-title{
+        color: var( --top-act-group-separate);
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+    }
+    &-separate{
+        width: 0.1rem;
+        height: 3rem;
+        background-color: #EDEDF6;
+    }
+    &-avatar{
+        width: 5rem;
+        height: 5rem;
+        object-fit: cover;
+        border-radius: 0.8rem;
+        cursor: pointer;
+    }
+}

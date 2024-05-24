@@ -74,9 +74,10 @@ body {
   background-color: var(--body-bg-color);
 }
 
-button, select, textarea, input {
+img, a, button, select, textarea, input {
   color: inherit;
   font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -1222,6 +1223,11 @@ html.dark {
   --top-menu-main-border:#171C28;
   --top-menu-icon: brightness(0) saturate(100%) invert(94%) sepia(1%) saturate(581%) hue-rotate(195deg) brightness(105%) contrast(97%);
 }
+@media (max-width: 991.98px) {
+  html.dark {
+    --navbar-bg-color:#292E39;
+  }
+}
 
 :root {
   --text-color:#1A162E;
@@ -1245,6 +1251,7 @@ html.dark {
 @media (max-width: 991.98px) {
   :root {
     --herder-lg-shadow:#ededf633;
+    --navbar-bg-color:#fff;
   }
 }
 
@@ -1289,14 +1296,48 @@ html.dark {
 .navbar {
   margin-left: 14.4rem;
 }
-@media (max-width: 991.98px) {
-  .navbar {
-    display: none;
-  }
-}
 @media (max-width: 1199.98px) {
   .navbar {
     margin-left: 6rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar {
+    position: fixed;
+    inset: 0 50% 0 0;
+    background-color: var(--navbar-bg-color);
+    margin-left: 0;
+    z-index: 9;
+    transform: translateX(-100%);
+    padding: 3.5rem;
+    transition: transform 0.5s ease;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar.show {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar.show ~ .navbar__overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.navbar__close-btn {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .navbar__close-btn {
+    display: block;
+    margin: 2rem 0;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__list {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2.4rem;
   }
 }
 .navbar__item:first-child a {
@@ -1305,8 +1346,16 @@ html.dark {
 .navbar__item:last-child a {
   padding-right: 0;
 }
+.navbar__item {
+  width: 100%;
+}
 .navbar__item:hover .dropdown {
   display: block;
+}
+@media (max-width: 991.98px) {
+  .navbar__item:hover .dropdown {
+    display: none;
+  }
 }
 .navbar__link {
   gap: 0.6rem;
@@ -1315,8 +1364,33 @@ html.dark {
   line-height: 5rem;
   padding: 0 1.5rem;
 }
+@media (max-width: 991.98px) {
+  .navbar__link {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
 .navbar__arrow {
   margin-top: 0.3rem;
+}
+
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility opacity 0.5s ease;
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    inset: 0;
+    z-index: 8;
+  }
 }
 
 .top__act {
@@ -1513,6 +1587,14 @@ html.dark {
   display: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+}
+
+.sub-menu-act {
+  position: initial;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

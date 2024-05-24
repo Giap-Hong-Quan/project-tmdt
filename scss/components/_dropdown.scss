@@ -102,13 +102,18 @@
 .sub-menu{
     position: absolute;
     inset: 0 0 0 var(--men-column-width) ;
-   
     height: 100%;
     overflow-y: auto;
     padding-left: 3rem;
     display: none;
     grid-template-columns: repeat(3,1fr);
     gap: 3rem;
-    
 }
 
+.sub-menu-act{
+    position: initial;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-left: 0;
+}

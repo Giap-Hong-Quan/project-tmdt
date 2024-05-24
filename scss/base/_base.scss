@@ -16,9 +16,10 @@ body{
     color: var(--text-color);
     background-color: var(--body-bg-color);
 }
-button, select,textarea,input{
+img,a,button, select,textarea,input{
     color: inherit;
     font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 a{
     color: inherit;

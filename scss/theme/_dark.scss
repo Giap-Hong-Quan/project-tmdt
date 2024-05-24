@@ -6,4 +6,11 @@ html.dark {
     --top-act-group-shadow:rgba(0, 0, 0, 0.20);
     --top-act-group-separate:#1A162E;
     --text-logo-color:#FFFFFF;
+    --body-bg-color:#292E39;
+    // dropdown
+    --dropdown-bg-color:#363c4a;
+    --dropdown-shadow-color:rgba(23, 28, 40, 0.40);
+    --dropdown-arrow-color: brightness(0) saturate(100%) invert(20%) sepia(22%) saturate(563%) hue-rotate(184deg) brightness(89%) contrast(86%);
+    --top-menu-main-border:#171C28;
+    --top-menu-icon: brightness(0) saturate(100%) invert(94%) sepia(1%) saturate(581%) hue-rotate(195deg) brightness(105%) contrast(97%);
 }

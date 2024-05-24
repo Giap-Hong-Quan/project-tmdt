@@ -1,0 +1,114 @@
+@use "../abstracts";
+
+.dropdown{
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 5.4rem;
+    display: none;
+  
+    width: min(124rem,100%);
+    &__inner{
+        border-radius: 2rem;
+    background: var(--dropdown-bg-color);
+    box-shadow: 0px 40px 90px 20px var( --dropdown-shadow-color);
+    padding: 3rem;
+    height: min(58.2rem,100vh - 154px);
+    position: relative;
+    }
+    &__icon-arrow{
+        position: absolute;
+        top: 3.8rem;
+        left: var(--arrow-left-pos);
+        transform: translateX(-32px);
+        filter: var( --dropdown-arrow-color);
+    }
+    
+}
+// 
+.top__menu{
+    --men-column-width:29.2rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+   
+    &-maim{
+        width: var(--men-column-width);
+        height: 100%;
+        overflow-y: auto;
+        border-right: 1px solid var( --top-menu-main-border);
+    }
+}
+.menu-column{
+    display: flex;
+    gap: 1.4rem;
+    + .menu-column{
+        margin-top: 3rem;
+    }
+    &-icon{
+        flex-shrink: 0;
+        width: 3.6rem;
+        height: 3.3rem;
+        position: relative;
+        @include abstracts.breakpoint(xl){
+            display: none;
+        }
+    }
+
+    &-content{
+        flex: 1;
+    }
+    &-icon1{
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+    }
+    &-icon2{
+        width: 1.8rem;
+        height: 1.8rem;
+        object-fit: contain;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        filter: var(--top-menu-icon);
+    }
+    &-heading{ 
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    margin: 0.6rem 0 1.5rem 0;
+    }
+
+    &-link{ 
+        display:block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    padding: 0.5rem 0;
+   
+    }
+    &-item-active >&-link,
+    &-item:hover> &-link{
+        color:  #0071DC;
+        font-weight: 500;
+
+    }
+    &-item{
+     &-active .sub-menu{
+        display: grid;
+    }   
+    }
+   
+}
+.sub-menu{
+    position: absolute;
+    inset: 0 0 0 var(--men-column-width) ;
+   
+    height: 100%;
+    overflow-y: auto;
+    padding-left: 3rem;
+    display: none;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    
+}
+

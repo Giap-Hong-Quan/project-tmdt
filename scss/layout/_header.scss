@@ -28,12 +28,7 @@
    @include abstracts.breakpoint(md){
     justify-content: space-between;
 }
-    &-menu-icon{
-        display: none;
-        @include abstracts.breakpoint(lg){
-            display: block;
-        }
-    }
+    
     
 }
 
@@ -56,7 +51,9 @@
         transition: transform 0.5s ease;
         
     }
-   
+    @include abstracts.breakpoint(md){
+        inset: 0 20% 0 0;
+    }
     &.show{
         @include abstracts.breakpoint(lg){
             transform: translateX(0);
@@ -82,6 +79,8 @@
             align-items: flex-start;
            flex-direction: column;
            gap: 2.4rem;
+           overflow-y: auto;
+           height: calc(100% - 23px);
         }
     }
     &__item{
@@ -95,13 +94,13 @@
     }
     &__item{
         width: 100%;
+        @include abstracts.breakpoint(md){
+            margin-top: 2rem;
+        }
     }
     
     &__item:hover .dropdown{
         display: block;
-        @include abstracts.breakpoint(lg){
-            display: none
-        }
     }
     &__link{
         @extend %flexItemCenter;
@@ -162,17 +161,7 @@
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
         border-radius: 0.8rem;
         background-color: var(--top-act-group-color);
-        @include abstracts.breakpoint(sm){
-            display: none;
-        }
-        @include abstracts.breakpoint(md){
-            display: none;
-        }
-    }
-    &-group-single{
-        @include abstracts.breakpoint(lg){
-            display: none;
-        }
+       
     }
     &-group-single &-btn{
          padding: 1.3rem;
@@ -204,5 +193,28 @@
         object-fit: cover;
         border-radius: 0.8rem;
         cursor: pointer;
+    }
+}
+.navbar__icon{
+    display:none;
+    @include abstracts.breakpoint(md){
+        display:flex;
+        margin-top: 2rem;
+    }
+    &-heading,
+    &-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    }
+    &-title{
+        @include abstracts.breakpoint(md){
+            margin-left: 1.6rem;
+        }
+    }
+    &-heading{
+        @include abstracts.breakpoint(md){
+            margin-left: auto;
+        }
     }
 }

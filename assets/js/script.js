@@ -185,3 +185,19 @@ function initJsToggle() {
         };
     });
 }
+
+// lide show
+const imgInner = document.querySelector(".slideshow__item img");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+const arrImg = [
+    "assets/img/slideshow/Group 19.png",
+    "assets/img/slideshow/Group 20.png",
+    "assets/img/slideshow/Group 21.png",
+];
+let currentIndex = 0;
+next.addEventListener("click" ,function (){
+    currentIndex++;
+imgInner.src = arrImg[currentIndex];
+});

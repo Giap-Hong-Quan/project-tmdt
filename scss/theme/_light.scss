@@ -1,26 +1,26 @@
 @use "../abstracts";
 
-:root{
-    --text-color:#1A162E;
-    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(9%) saturate(4375%) hue-rotate(212deg) brightness(93%) contrast(96%);
-    --header-bg-color:#EEEEEE;
-    --top-act-group-color:#FFFFFF;
-    --body-bg-color:#F6F6F6;
-    --top-act-group-shadow:rgba(237, 237, 245, 0.2);
-    --top-act-group-separate:#1A162E;
-    --text-logo-color:#1A162E;
-    
-    @include abstracts.breakpoint(sm){
-        --header-bg-color:#fff;
-        --body-color:#F6F6F6
-    }
-    @include abstracts.breakpoint(lg){
-        --herder-lg-shadow:#ededf633;
-        --navbar-bg-color:#fff;
-    }
-    // dropdown
-    --dropdown-bg-color:#fff;
-    --dropdown-shadow-color:rgba(200, 200, 200, 0.40);
-    --top-menu-main-border:#D2D1D6;
+:root {
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(9%)
+    saturate(4375%) hue-rotate(212deg) brightness(93%) contrast(96%);
+  --header-bg-color: #eeeeee;
+  --top-act-group-color: #ffffff;
+  --body-bg-color: #f6f6f6;
+  --top-act-group-shadow: rgba(237, 237, 245, 0.2);
+  --top-act-group-separate: #1a162e;
+  --text-logo-color: #1a162e;
 
+  @include abstracts.screen(sm) {
+    --header-bg-color: #fff;
+    --body-color: #f6f6f6;
+  }
+  @include abstracts.screen(lg) {
+    --herder-lg-shadow: #ededf633;
+    --navbar-bg-color: #fff;
+  }
+  // dropdown
+  --dropdown-bg-color: #fff;
+  --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+  --top-menu-main-border: #d2d1d6;
 }

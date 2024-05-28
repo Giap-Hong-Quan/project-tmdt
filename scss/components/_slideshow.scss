@@ -1,71 +1,70 @@
 @use "../abstracts";
 
-.slideshow{
+.slideshow {
+  position: relative;
+  margin-top: 4rem;
+  @include abstracts.screen(md) {
+    margin-top: 3rem;
+  }
+  &__inner {
+    display: flex;
+    overflow: hidden;
+  }
+  &__item {
     position: relative;
-    margin-top: 4rem;
-    @include abstracts.breakpoint(md){
-        margin-top: 3rem;
+    flex-shrink: 0;
+    width: 100%;
+    padding-top: 34%;
+    @include abstracts.screen(md) {
+      padding-top: 50%;
     }
-    &__inner{
-        display: flex;
-        overflow: hidden;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__page {
+    position: absolute;
+    left: 5.2%;
+    bottom: 15%;
+    display: flex;
+    align-items: center;
+    width: 18%;
+    @include abstracts.screen(md) {
+      display: none;
     }
-    &__item{
-        position: relative;
-        flex-shrink: 0;
-        width: 100%;
-        padding-top: 34%;
-        @include abstracts.breakpoint(md){
-            padding-top: 50%;
-        }
-    }
-    &__img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    &__page{
-        position: absolute;
-        left: 5.2%;
-        bottom: 15%;
-        display: flex;
-        align-items: center;
-        width: 18%;
-        @include abstracts.breakpoint(md){
-            display: none;
-        }
-      
-    }
-    &__num{
-        color: #fff;
+  }
+  &__num {
+    color: #fff;
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 2.6rem;
-    }
-    &__slider{
+  }
+  &__slider {
     width: 100%;
     height: 0.4rem;
     background-color: #fff;
     position: relative;
     margin: 0 2.4rem;
     &::before,
-    &::after{
-        content: "";
-        top: 50%;
-      
-        position: absolute;
-        width: 1.4rem;
-        height: 1.4rem;
-        border: 0.4rem solid #fff;
-        border-radius: 50%;
-        translate: -90% -50%;
+    &::after {
+      content: "";
+      top: 50%;
+
+      position: absolute;
+      width: 1.4rem;
+      height: 1.4rem;
+      border: 0.4rem solid #fff;
+      border-radius: 50%;
+      translate: -90% -50%;
     }
-    &::after{
-        right: 0;
-        translate: 90% -50%;
+    &::after {
+      right: 0;
+      translate: 90% -50%;
     }
-    }
+  }
 }

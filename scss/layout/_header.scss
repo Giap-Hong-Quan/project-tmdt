@@ -1,221 +1,211 @@
 @use "../abstracts";
 
-%flexItemCenter{
-    display: flex;
-    align-items: center;
+%flexItemCenter {
+  display: flex;
+  align-items: center;
 }
 
-.header{
-    background-color:var(--header-bg-color) ;
-    padding: 3rem 0 ;
-    @include abstracts.breakpoint(sm){
-        padding:1.6rem 0;
-    }
-    @include abstracts.breakpoint(lg){
-        padding:2.0rem 0;
-        box-shadow: 0px 20px 60px 10px var(--herder-lg-shadow);
-    }
-    // @include abstracts.breakpoint(lg){
-    //     width: 100px;
-    // }
-    // @include abstracts.breakpoint(sm){
-    //     width: 100px;
-    // }
+.header {
+  background-color: var(--header-bg-color);
+  padding: 3rem 0;
+  @include abstracts.screen(sm) {
+    padding: 1.6rem 0;
+  }
+  @include abstracts.screen(lg) {
+    padding: 2rem 0;
+    box-shadow: 0px 20px 60px 10px var(--herder-lg-shadow);
+  }
+  // @include abstracts.screen(lg){
+  //     width: 100px;
+  // }
+  // @include abstracts.screen(sm){
+  //     width: 100px;
+  // }
 }
-.top__bar{
-    position: relative;
-    z-index: 10;
-   @extend %flexItemCenter;
-   @include abstracts.breakpoint(md){
+.top__bar {
+  position: relative;
+  z-index: 10;
+  @extend %flexItemCenter;
+  @include abstracts.screen(md) {
     justify-content: space-between;
+  }
 }
-    
-    
-}
-
-
 
 // nav
-.navbar{
-    @include abstracts.breakpoint(xl){
-        margin-left: 6rem;
+.navbar {
+  @include abstracts.screen(xl) {
+    margin-left: 6rem;
+  }
+  @include abstracts.screen(lg) {
+    // display: none;
+    position: fixed;
+    inset: 0 50% 0 0;
+    background-color: var(--navbar-bg-color);
+    margin-left: 0;
+    z-index: 9;
+    transform: translateX(-100%);
+    padding: 3.5rem;
+    transition: transform 0.5s ease;
+  }
+  @include abstracts.screen(md) {
+    inset: 0 20% 0 0;
+  }
+  &.show {
+    @include abstracts.screen(lg) {
+      transform: translateX(0);
     }
-    @include abstracts.breakpoint(lg){
-        // display: none;
-        position: fixed;
-        inset: 0 50% 0 0;
-        background-color: var(--navbar-bg-color) ;
-        margin-left: 0;
-        z-index: 9;
-        transform: translateX(-100%);
-        padding: 3.5rem ;
-        transition: transform 0.5s ease;
-        
+  }
+  &.show ~ &__overlay {
+    @include abstracts.screen(lg) {
+      visibility: visible;
+      opacity: 1;
     }
-    @include abstracts.breakpoint(md){
-        inset: 0 20% 0 0;
+  }
+  &__close-btn {
+    display: none;
+    @include abstracts.screen(lg) {
+      display: block;
+      margin: 2rem 0;
     }
-    &.show{
-        @include abstracts.breakpoint(lg){
-            transform: translateX(0);
-        }
+  }
+  margin-left: 14.4rem;
+  &__list {
+    @extend %flexItemCenter;
+    @include abstracts.screen(lg) {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 2.4rem;
+      overflow-y: auto;
+      height: calc(100% - 23px);
     }
-    &.show ~ &__overlay{
-        @include abstracts.breakpoint(lg){
-            visibility: visible;
-            opacity: 1;
-        }   
+  }
+  &__item {
+    &:first-child a {
+      padding-left: 0;
     }
-    &__close-btn{
-        display: none;
-        @include abstracts.breakpoint(lg){
-            display: block;
-            margin: 2rem 0;
-        }
+    &:last-child a {
+      padding-right: 0;
     }
-    margin-left: 14.4rem;
-    &__list{
-        @extend %flexItemCenter;
-        @include abstracts.breakpoint(lg){
-            align-items: flex-start;
-           flex-direction: column;
-           gap: 2.4rem;
-           overflow-y: auto;
-           height: calc(100% - 23px);
-        }
+  }
+  &__item {
+    width: 100%;
+    @include abstracts.screen(md) {
+      margin-top: 2rem;
     }
-    &__item{
-      &:first-child a{
-        padding-left: 0;
-      }
-      &:last-child a{
-        padding-right: 0;
-      }
-      
+  }
+
+  &__item:hover .dropdown {
+    display: block;
+  }
+  &__link {
+    @extend %flexItemCenter;
+    gap: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 5rem;
+    padding: 0 1.5rem;
+    @include abstracts.screen(lg) {
+      justify-content: space-between;
+      width: 100%;
+      padding: 0;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
     }
-    &__item{
-        width: 100%;
-        @include abstracts.breakpoint(md){
-            margin-top: 2rem;
-        }
-    }
-    
-    &__item:hover .dropdown{
-        display: block;
-    }
-    &__link{
-        @extend %flexItemCenter;
-        gap: 0.6rem;
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 5rem;
-        padding: 0 1.5rem ;
-        @include abstracts.breakpoint(lg){
-            justify-content: space-between;
-            width: 100%;
-            padding: 0;
-            font-size: 1.6rem;
-            line-height: 2.4rem;
-        }
-    }
-    &__arrow{
-        margin-top: 0.3rem;
-    }
-    
-}   
+  }
+  &__arrow {
+    margin-top: 0.3rem;
+  }
+}
 // overlay
-.navbar__overlay{
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility opacity 0.5s ease;
+  @include abstracts.screen(lg) {
+    background-color: rgba($color: #0000, $alpha: 0.4);
+    position: fixed;
     visibility: hidden;
     opacity: 0;
-    transition: visibility opacity 0.5s ease;
-    @include abstracts.breakpoint(lg){  
-        background-color: rgba($color: #0000, $alpha: 0.4);
-        position: fixed;
-        visibility: hidden;
-        opacity: 0;
-        inset: 0;
-        z-index: 8;
-    }
-   
+    inset: 0;
+    z-index: 8;
+  }
 }
 // .navbar__checkbox:checked ~ .navabr__overlay{
-//     @include abstracts.breakpoint(lg){
+//     @include abstracts.screen(lg){
 //         visibility: visible;
 //         opacity: 1;
 //     }
 // }
 // .navbar__checkbox:checked ~ .navbar{
-//     @include abstracts.breakpoint(lg){
-//         transform: translateX(0);  
+//     @include abstracts.screen(lg){
+//         transform: translateX(0);
 //     }
 // }
 // top__actions
-.top__act{
-    margin-left: auto;
-    @include abstracts.breakpoint(md){
-        margin-left: 0
-    }
+.top__act {
+  margin-left: auto;
+  @include abstracts.screen(md) {
+    margin-left: 0;
+  }
+  @extend %flexItemCenter;
+  gap: 2rem;
+  &-group {
     @extend %flexItemCenter;
-    gap: 2rem;
-    &-group{
-        @extend %flexItemCenter;
-        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
-        border-radius: 0.8rem;
-        background-color: var(--top-act-group-color);
-       
-    }
-    &-group-single &-btn{
-         padding: 1.3rem;
-
-    }
-    &-btn{
-        padding: 1.3rem 2rem;
-        border: none;
-        outline: none;
-        display: flex;
-        @extend %flexItemCenter;
-        gap: 1rem;
-        cursor: pointer;
-    }
-    &-title{
-        color: var( --top-act-group-separate);
-        font-size: 1.5rem;
-        font-weight: 600;
-        line-height: 2.2rem;
-    }
-    &-separate{
-        width: 0.1rem;
-        height: 3rem;
-        background-color: #EDEDF6;
-    }
-    &-avatar{
-        width: 5rem;
-        height: 5rem;
-        object-fit: cover;
-        border-radius: 0.8rem;
-        cursor: pointer;
-    }
+    box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
+    border-radius: 0.8rem;
+    background-color: var(--top-act-group-color);
+  }
+  &-group-single &-btn {
+    padding: 1.3rem;
+  }
+  &-btn {
+    padding: 1.3rem 2rem;
+    border: none;
+    outline: none;
+    display: flex;
+    @extend %flexItemCenter;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  &-title {
+    color: var(--top-act-group-separate);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+  }
+  &-separate {
+    width: 0.1rem;
+    height: 3rem;
+    background-color: #ededf6;
+  }
+  &-avatar {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    cursor: pointer;
+  }
 }
-.navbar__icon{
-    display:none;
-    @include abstracts.breakpoint(md){
-        display:flex;
-        margin-top: 2rem;
-    }
-    &-heading,
-    &-title{
+.navbar__icon {
+  display: none;
+  @include abstracts.screen(md) {
+    display: flex;
+    margin-top: 2rem;
+  }
+  &-heading,
+  &-title {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.2rem;
+  }
+  &-title {
+    @include abstracts.screen(md) {
+      margin-left: 1.6rem;
     }
-    &-title{
-        @include abstracts.breakpoint(md){
-            margin-left: 1.6rem;
-        }
+  }
+  &-heading {
+    @include abstracts.screen(md) {
+      margin-left: auto;
     }
-    &-heading{
-        @include abstracts.breakpoint(md){
-            margin-left: auto;
-        }
-    }
+  }
 }

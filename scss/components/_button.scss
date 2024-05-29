@@ -1,0 +1,37 @@
+@use "../abstracts";
+.home__filter{
+    display: flex;
+    align-items: center;
+    column-gap: 1.4rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--filter-bg-color);
+    border-radius: 0.6rem;
+    &-heading{
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 2rem;
+        color: var(--filter-text-color);
+    }
+}
+.like__btn{
+    width: 5rem;
+    height: 5rem;
+    background-color:var(--product-bg-btn-color);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    box-shadow:0px 20px 60px rgba(16, 16, 16, 0.2);
+    border-radius: 50%;
+    &:not(&-liked) .like__btn-icon-liked{
+        display: none;
+    }
+    &-liked &-icon{
+        display: none;
+    }
+    &-liked &-icon-liked{
+        display: block;
+    }
+    &-icon-liked{
+        margin-top: 9px;
+    }
+}

@@ -201,3 +201,12 @@ next.addEventListener("click" ,function (){
     currentIndex++;
 imgInner.src = arrImg[currentIndex];
 });
+
+
+// 
+// JavaScript để thêm/gỡ lớp `like__btn-liked` khi bấm nút
+// document.querySelectorAll('.like__btn').forEach(button => {
+//     button.addEventListener('click', function() {
+//         this.classList.toggle('like__btn-liked');
+//     });
+// });

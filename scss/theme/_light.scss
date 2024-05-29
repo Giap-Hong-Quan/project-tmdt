@@ -23,4 +23,19 @@
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
   --top-menu-main-border: #d2d1d6;
+  // cate
+ --cate-bg-img:#fff;
+ --cate-text-color:#000;
+ --cate-bg-item:#EEE;
+ @include abstracts.screen(md) {
+  --cate-bg-item:#fff;
+ }
+//  filter
+--filter-bg-color:#fff;
+--filter-text-color:#6C6C72;
+// product
+--product-bg-img-color:#fff;
+--product-bg-color:#fff;
+--product-bg-btn-color:#fff;
 }
+

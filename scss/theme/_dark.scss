@@ -20,4 +20,17 @@ html.dark {
   @include abstracts.screen(lg) {
     --navbar-bg-color: #292e39;
   }
+  // cate
+   // cate
+ --cate-bg-img:#292E39;
+ --cate-text-color:#FFF;
+ --cate-bg-item:#171C28;
+ //  filter
+--filter-bg-color:#171C28;
+--filter-text-color:#fff;
+// product
+--product-bg-img-color:#171C28;
+--product-bg-color:#171C28;
+--product-bg-btn-color:#292E39;
+--product-shadow:rgba(237, 237, 246, 0.20);
 }

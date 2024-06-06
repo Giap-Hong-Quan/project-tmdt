@@ -1,0 +1,133 @@
+@use "../abstracts";
+
+.footer{
+    background-color: var(--header-bg-color);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    &__row{
+        display: grid;
+        grid-template-columns: repeat(4 ,1fr);
+        @include abstracts.screen(lg){
+            grid-template-columns: repeat(2 ,1fr);
+        }
+        @include abstracts.screen(sm){
+            grid-template-columns: 1fr;
+        }
+    }
+    &__logo{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    &_heading{
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 3.2rem;
+        margin-bottom: 2rem;
+        &-icon {
+            margin-bottom: 0;
+        }
+    }
+    &__link{
+        display: inline-block;
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 3rem;
+        color: #3a88b5;
+        
+    }
+    &__label{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+    
+        margin-top: 1rem;
+    }
+    &__link-text{
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 2rem;
+        color: #aa9d9d;
+        margin-top: 1rem;
+    }
+    &__active{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        @include abstracts.screen(lg){
+            flex-direction: column;
+            row-gap:  3rem;
+            align-items: center;
+        }
+        @include abstracts.screen(sm){
+            align-items: start;
+        }
+    }
+    &__search{
+     &-label{
+        display: inline-block;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 3.2rem;
+        margin-bottom: 2rem;
+         @include abstracts.screen(lg){
+            text-align: center;
+         }
+     }
+    }
+    &__act-input{
+        display: flex;
+        gap: 1.5rem;
+        height: 4.6rem;
+    }
+    &__input{
+        height: 100%;
+        width: 25rem;
+        border-radius: 0.8rem;
+        outline: none;
+        padding-left: 1rem;
+        border: 1px solid #ccc;
+    }
+    &__icon{
+        display: flex;
+        align-items: center;
+        margin-right: 10rem;
+        gap: 2rem;
+        @include abstracts.screen(lg){
+            margin-right: 0;
+        }
+        &--link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            &-fb{
+                background-color: #0866ff;
+            }
+            &-youtube{
+                background-color: #ff0000;
+            }
+            &-tiktok{
+                background-color: #000;
+            }
+            &-twitter{
+                background-color: #1c9be9;
+            }
+            &-linkedin-in{
+                background-color: #0a66c2;
+            }
+   
+        }
+    }
+    &__img{
+        width: 2rem;
+        height: 2rem;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(94%)
+        saturate(18%) hue-rotate(326deg) brightness(106%) contrast(103%);;
+    }
+}

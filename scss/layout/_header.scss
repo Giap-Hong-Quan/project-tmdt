@@ -8,10 +8,19 @@
 .header {
   background-color: var(--header-bg-color);
   padding: 3rem 0;
+  position: sticky;
+  top: 0rem;
+  z-index: 100;
   @include abstracts.screen(sm) {
+    position: sticky;
+    top: 0rem;
+    z-index: 100;
     padding: 1.6rem 0;
   }
   @include abstracts.screen(lg) {
+    position: sticky;
+    top: 0rem;
+    z-index: 100;
     padding: 2rem 0;
     box-shadow: 0px 20px 60px 10px var(--herder-lg-shadow);
   }

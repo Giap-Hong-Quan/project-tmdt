@@ -4,7 +4,7 @@
     align-items: center;
     column-gap: 1.4rem;
     padding: 0.6rem 1.2rem;
-    background-color: var(--filter-bg-color);
+    background-color: var(--filter-bg-btn-color);
     border-radius: 0.6rem;
     &-heading{
         font-size: 1.4rem;
@@ -33,5 +33,41 @@
     }
     &-icon-liked{
         margin-top: 9px;
+    }
+}
+// 
+.btn{
+    background-color: #F8F8FB;
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 4.6rem;
+    border-radius: 0.6rem;
+    padding:0 2rem;
+    user-select: none;
+    +.btn{
+        margin-left: 2rem;
+    }
+    &--text{
+        background-color: transparent;
+        color: #9E9DA8;
+        font-weight: 400;
+    }
+    &--primary{
+        background-color: #FFB700;
+    }
+    &--outline{
+        background-color: transparent;
+        border: 1px solid  #D2D1D6;;
+    }
+    &--rounded{
+        border-radius: 999px;
+    }
+    &:hover{
+        opacity: 0.8;
+    }
+    &[disabled],
+    &--disabled{
+        opacity: 0.5;
+        pointer-events: none;
     }
 }

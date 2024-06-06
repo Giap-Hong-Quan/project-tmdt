@@ -18,6 +18,7 @@ body{
 }
 img,a,button, select,textarea,input{
     color: inherit;
+    outline: none;
     font-family: inherit;
     -webkit-tap-highlight-color: transparent;
 }

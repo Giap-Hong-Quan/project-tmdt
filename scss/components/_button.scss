@@ -37,6 +37,9 @@
 }
 // 
 .btn{
+    display: flex;
+    align-items: center;
+justify-content: center;
     background-color: #F8F8FB;
     font-size: 1.8rem;
     font-weight: 500;
@@ -44,9 +47,11 @@
     border-radius: 0.6rem;
     padding:0 2rem;
     user-select: none;
-    +.btn{
-        margin-left: 2rem;
-    }
+    // +.btn{
+    //     &:not(.btn--no-margin){
+    //         margin-left: 2rem;
+    //     }
+    // }
     &--text{
         background-color: transparent;
         color: #9E9DA8;

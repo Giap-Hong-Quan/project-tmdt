@@ -21,14 +21,83 @@
 </head>
 
 <body>
-    <header id="header"></header>
-    <script>
-        load("#header","./template/header.html");
-    </script>
-    <h1> sign up homeapy</h1>
-    <footer id="footer"></footer>
-    <script>
-        load("#footer","./template/footer.html");
-    </script>
+   <main class="auth">
+    <!-- auth intro -->
+        <div class="auth__intro">
+             <!-- logo -->
+             <a href="./">
+                <div class="logo auth__logo d-none d-md-flex">
+                    <img src="./assets/icon/logo.svg" alt="grocerymart" class="logo__img ">
+                    <h1 class="logo__title">grocerymart</h1>
+                </div>
+            </a>
+            <img class="auth__intro__img" src="./assets/img/product/product1.png" alt="">
+            <p class="auth__intro__text"> The best of luxury brand values, high quality products, and innovative services</p>
+           <button class="auth__intro-next d-none d-md-flex js-toggle" toggle-target="#auth__con">
+            <img src="./assets/img/authh/Frame 11.png" alt="">
+           </button>
+        </div>
+        <!-- auth content -->
+        <div id="auth__con" class="auth__content hide ">
+            <div class="auth__content__inner">
+                 <!-- logo -->
+                <a href="./">
+                    <div class="logo">
+                        <img src="./assets/icon/logo.svg" alt="grocerymart" class="logo__img">
+                        <h1 class="logo__title">grocerymart</h1>
+                    </div>
+                </a>
+                <h1 class="auth__heading">Sign Up</h1>
+                <p class="auth__desc">Let’s create your account and  Shop like a pro and save money.</p>
+                <form action="./index-logined.html" class="form auth__form">
+                    <div class="form__group">
+                        <div class="form__group--text-input">
+                            <input class="form__group-input" type="email" name="" id="" placeholder="Email" required>
+                            <img class="form__group-icon" src="./assets/icon/input-email.svg" alt="">
+                            <img class=" form__group-icon-error" src="./assets/icon/error.svg" alt="">
+                        </div>
+                        <p class="form__error">Vui lòng nhập Email</p>
+                    </div>
+                    
+                    <div class="form__group">
+                        <div class="form__group--text-input">
+                            <input class="form__group-input" type="password" name="" id="" placeholder="Password" required minlength="6">
+                            <img class="form__group-icon" src="./assets/icon/input-pas.svg" alt="">
+                            <img class=" form__group-icon-error" src="./assets/icon/error.svg" alt="">
+                        </div>
+                        <p class="form__error">Vui lòng nhập đủ 6 ký tự</p>
+                    </div>
+                    
+                    <div class="form__group">
+                        <div class="form__group--text-input">
+                            <input class="form__group-input" type="password" name="" id="" placeholder="Confirm Password" required minlength="6">
+                            <img class="form__group-icon" src="./assets/icon/input-pas.svg" alt="">
+                            <img class=" form__group-icon-error" src="./assets/icon/error.svg" alt="">
+                        </div>
+                        <p class="form__error">Vui lòng nhập đủ 6 ký tự</p>
+                    </div>
+                    
+                    <div class="form__group form__group-inline">
+                        <label class="form__checkbox" for="checkbox">
+                            <input class="form__checkbox-input" type="checkbox" name="" id="checkbox">
+                            <span class="form__checkbox-label">Set as default card</span>
+                        </label>
+                        <a class="auth__link" href="">Recovery Password</a>
+                    </div>
+                    <div class="form__group auth__btn-group">
+                        <button class="btn btn--primary auth__btn ">Sign Up</button>
+                        <button class="btn btn--outline auth__btn "> G Sign in with Gmail</button>
+                    </div>
+
+                </form>
+                <p class="auth__text">You have an account yet?
+                    <a class="auth__link auth__text-link" href="">Sign In</a>
+                </p>
+            </div>
+        </div>
+   </main >
+   <script>
+    window.dispatchEvent(new Event("template-loaded"));
+   </script>
 </body>
 </html>

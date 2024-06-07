@@ -154,6 +154,7 @@
 .top__act {
   margin-left: auto;
   @include abstracts.screen(md) {
+   
     margin-left: 0;
   }
   @extend %flexItemCenter;
@@ -194,6 +195,14 @@
     border-radius: 0.8rem;
     cursor: pointer;
   }
+  &__sign-up{
+    @include abstracts.screen(md){
+      height: 3.4rem !important;
+      font-size: 1.6rem !important;
+      padding: 0 1rem !important;
+    }
+  }
+  
 }
 .navbar__icon {
   display: none;

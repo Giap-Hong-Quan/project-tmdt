@@ -6,7 +6,7 @@
     &__group:has(:invalid):has(&__group-input:not(:placeholder-shown))  {
     .form__group--text-input{
     
-        background-color: rgba($color: red, $alpha: 0.1);
+        background-color: rgba($color: #ed4337, $alpha: 0.1);
     }
 
      .form__error ,

@@ -1218,17 +1218,14 @@ button {
   }
 }
 @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+  0%, 100% {
+    translate: 0;
   }
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
+  25%, 75% {
+    translate: 4px;
   }
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
+  50% {
+    translate: -4px;
   }
 }
 html.dark {
@@ -1634,6 +1631,11 @@ html.dark {
   outline: none;
   padding-left: 1rem;
   border: 1px solid #ccc;
+}
+@media (max-width: 575.98px) {
+  .footer__input {
+    width: min(25rem, 100%);
+  }
 }
 .footer__icon {
   display: flex;
@@ -2338,7 +2340,7 @@ html.dark {
   margin-top: 3rem;
 }
 .form__group:has(:invalid):has(.form__group-input:not(:placeholder-shown)) .form__group--text-input {
-  background-color: rgba(255, 0, 0, 0.1);
+  background-color: rgba(237, 67, 55, 0.1);
 }
 .form__group:has(:invalid):has(.form__group-input:not(:placeholder-shown)) .form__error,
 .form__group:has(:invalid):has(.form__group-input:not(:placeholder-shown)) .form__group-icon-error {
@@ -2478,7 +2480,7 @@ html.dark {
   line-height: 144.444%;
 }
 .auth__intro-next {
-  margin-top: 20rem;
+  margin: 20rem 0 5rem 0;
 }
 .auth__content {
   flex: 1;
@@ -2488,14 +2490,12 @@ html.dark {
 }
 @media (max-width: 767.98px) {
   .auth__content {
+    translate: 100% 0;
     position: fixed;
     z-index: 1;
     inset: 0;
     overflow-y: auto;
     transition: translate 0.5s;
-  }
-  .auth__content.hide {
-    translate: 100% 0;
   }
   .auth__content.show {
     translate: 0 0;
@@ -2548,6 +2548,12 @@ html.dark {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 2.6rem;
+}
+
+@media (max-width: 767.98px) {
+  .auth__content {
+    translate: 0 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

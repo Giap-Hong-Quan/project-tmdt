@@ -33,7 +33,7 @@
             line-height: 144.444%;
         }
         &-next{
-            margin-top:  20rem;
+            margin: 20rem 0 5rem 0;
         }
     }
     &__content{
@@ -42,9 +42,8 @@
         background-color: var(--bg-auth-content);
        padding-top: 5rem;
        @include abstracts.screen (md){
-        &.hide{
+        
             translate:100% 0;
-        }
         &.show{
             translate:0 0;
         }

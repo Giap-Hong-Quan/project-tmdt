@@ -1,0 +1,11 @@
+@use "../abstracts";
+.auth{
+
+
+
+    &__content{
+        @include abstracts.screen (md){
+            translate:0 0;
+        }
+    }
+}

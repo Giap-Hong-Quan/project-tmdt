@@ -85,6 +85,9 @@
     &__input{
         height: 100%;
         width: 25rem;
+        @include abstracts.screen(sm){
+            width: min(25rem,100%);
+        }
         border-radius: 0.8rem;
         outline: none;
         padding-left: 1rem;

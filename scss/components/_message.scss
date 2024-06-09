@@ -1,0 +1,13 @@
+.message{
+    &--success{
+        width: 100%;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    background-color: rgba($color: #03d136, $alpha: 0.2);
+    /* text-align: start; */
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: start;
+    border: 2px solid #03d136;
+    }
+}

@@ -42,8 +42,10 @@
         background-color: var(--bg-auth-content);
        padding-top: 5rem;
        @include abstracts.screen (md){
-        
+        &.hide{
+
             translate:100% 0;
+        }
         &.show{
             translate:0 0;
         }
@@ -63,6 +65,12 @@
         
             margin: 0 auto;
         }
+    }
+    &__message{
+        margin-top: 5rem;
+    }
+    &__form--message{
+        margin-top: 1rem;
     }
     &__heading{
         font-size: 3rem;

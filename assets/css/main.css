@@ -2409,6 +2409,18 @@ html.dark {
   display: none;
 }
 
+.message--success {
+  width: 100%;
+  padding: 1.8rem;
+  border-radius: 1rem;
+  background-color: rgba(3, 209, 54, 0.2);
+  /* text-align: start; */
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: start;
+  border: 2px solid #03d136;
+}
+
 .home__container {
   margin-top: 4rem;
 }
@@ -2490,12 +2502,14 @@ html.dark {
 }
 @media (max-width: 767.98px) {
   .auth__content {
-    translate: 100% 0;
     position: fixed;
     z-index: 1;
     inset: 0;
     overflow-y: auto;
     transition: translate 0.5s;
+  }
+  .auth__content.hide {
+    translate: 100% 0;
   }
   .auth__content.show {
     translate: 0 0;
@@ -2509,6 +2523,12 @@ html.dark {
   justify-content: center;
   width: min(46rem, 100%);
   margin: 0 auto;
+}
+.auth__message {
+  margin-top: 5rem;
+}
+.auth__form--message {
+  margin-top: 1rem;
 }
 .auth__heading {
   font-size: 3rem;
@@ -2548,12 +2568,6 @@ html.dark {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 2.6rem;
-}
-
-@media (max-width: 767.98px) {
-  .auth__content {
-    translate: 0 0;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
